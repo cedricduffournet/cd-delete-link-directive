@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Angular cd-menu</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css" rel="stylesheet">
+    <base href="/"/>
+
+</head>
+<body ng-controller="AppCtrl as vm">
+    <div role="main">
+
+        <div class="container">
+            <table class="table">
+                <tr>
+                    <th>
+                        Item
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+                <tr ng-repeat="e in vm.data">
+                    <td>
+                        {{e.name}}
+                    </td>
+                    <td>
+                        <cd-delete-link
+                                action='{{vm.action}}'
+                                action-data-return="{index:$index}"
+                                content='Are you sure ?'
+                                label-btn-action="Delete"
+                                label-btn-cancel="Cancel"
+                                title-popover="Deletion"
+                                title-popover="Deletion"
+                                title-tooltip="Deletion"
+                                >
+                        </cd-delete-link>
+                    </td>
+
+                </tr>
+            </table>
+                <!--<menu links="app.menuLinks"></menu>!-->
+
+        </div>
+    </div>
+
+    <script src="scripts/bower_components/angular/angular.js"></script>
+    <script src="scripts/src/template/cd-delete-link-directive.tpl.js"></script>
+
+    <script src="scripts/bower_components/angular-strap/dist/modules/dimensions.js"></script>
+    <script src="scripts/bower_components/angular-strap/dist/modules/tooltip.js"></script>
+    <script src="scripts/bower_components/angular-strap/dist/modules/popover.js"></script>
+    <script src="scripts/bower_components/angular-strap/dist/modules/popover.tpl.js"></script>
+    <script src="scripts/bower_components/angular-strap/dist/modules/tooltip.tpl.js"></script>
+
+
+    <script src="scripts/src/cd-delete-link-directive.js"></script>
+
+
+    <script src="demo.js"></script>
+
+</body>
+</html>

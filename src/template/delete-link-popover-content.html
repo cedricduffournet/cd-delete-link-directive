@@ -1,0 +1,8 @@
+<div class="btn-toolbar text-center">
+    <p ng-bind="vm.content"></p>
+    <div class="btn-toolbar">
+
+        <button class='btn btn-info' ng-bind="vm.labelBtnCancel" ng-click="$hide()" ng-bind="titleCancel"></button>
+        <button class='btn btn-danger' ng-bind="vm.labelBtnAction" ng-click="vm.emitEvent();$hide()"></button>
+    </div>
+</div>
