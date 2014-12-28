@@ -18,6 +18,9 @@
    * @param {String=} labelBtnCancel label for cancel button
    * @param {String=} titlePopover angular-strap popover title
    * @param {String=} titleTooltip angular-strap tooltip title
+   *
+   * @toDo
+   * Write test
    */
   angular
     .module('cd.ui.deleteLink', [
@@ -36,10 +39,11 @@
       replace: true,
       controller: DeleteLinkController,
       controllerAs: 'vm',
+      bindToController: true,
       scope: {
         action: '@action',
         actionDataReturn: '=actionDataReturn',
-        animation:'@animation',
+        animation: '@animation',
         content: '@content',
         labelBtnAction: '@labelBtnAction',
         labelBtnCancel: '@labelBtnCancel',
@@ -51,21 +55,20 @@
 
     return directive;
 
-    function linkFunc($scope, $element) {
-
+    function linkFunc($scope, $element, $attrs, controller) {
       //create tooltip
       $tooltip($element,
         {
-          title: $scope.titleTooltip,
-          animation: $scope.animation
+          title: controller.titleTooltip,
+          animation: controller.animation
         });
 
       //create popover
       $popover($element,
         {
-          title: $scope.titlePopover,
+          title: controller.titlePopover,
           template: 'popover/popover.tpl.html',
-          animation: $scope.animation,
+          animation: controller.animation,
           placement: 'left',
           contentTemplate: 'template/delete-link-popover-content.html',
           scope: $scope
@@ -80,17 +83,10 @@
     /* jshint validthis: true */
     var vm = this;
 
-    vm.action = $scope.action;
-    vm.content = $scope.content;
-    vm.labelBtnAction = $scope.labelBtnAction;
-    vm.labelBtnCancel = $scope.labelBtnCancel;
-    vm.titlePopover = $scope.titlePopover;
-    vm.titleTooltip = $scope.titleTooltip;
-
     vm.emitEvent = emitEvent;
 
     function emitEvent() {
-      $scope.$emit($scope.action, $scope.actionDataReturn);
+      $scope.$emit(vm.action, vm.actionDataReturn);
     }
   }
 

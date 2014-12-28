@@ -1,6 +1,6 @@
 {
   "name": "cd-delete-link-directive",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "main":["src/cd-delete-link-directive.js","src/template/cd-delete-link-directive.tpl.js"],
   "description": "Attach delete link with angular-strap popover confirmation and tooltip",
   "author": "Cedric Duffournet",

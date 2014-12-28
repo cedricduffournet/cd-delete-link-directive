@@ -10,7 +10,7 @@ NG_DOCS={
       "type": "directive",
       "moduleName": "cd.ui",
       "shortDescription": "Create en link with a angular-strap popover and angular-strap tooltip",
-      "keywords": "action actiondatareturn angular-strap animation api apply based button cancel cd click content create css data deletelink directive emit emitname en event label labelbtnaction labelbtncancel link nganimate popover powered return title titlepopover titletooltip tooltip ui"
+      "keywords": "action actiondatareturn angular-strap animation api apply based button cancel cd click content create css data deletelink directive emit en event label labelbtnaction labelbtncancel link nganimate popover powered return test title titlepopover titletooltip tooltip ui write"
     }
   ],
   "apis": {
